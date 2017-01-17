@@ -18,7 +18,7 @@ describe("string calculator", function() {
     it("should return 1 if input is 1", function() {
         let calc = createCalc();
 
-        let sum = calc.add(1);
+        let sum = calc.add('1');
 
         assert.equal(sum, 1);
     });
@@ -26,8 +26,16 @@ describe("string calculator", function() {
     it("should return single number if input is single number", function() {
         let calc = createCalc();
 
-        let sum = calc.add(2);
+        let sum = calc.add('2');
 
         assert.equal(sum, 2);
+    });
+
+    it("should return sum of two comma separated numbers", function() {
+        let calc = createCalc();
+
+        let sum = calc.add('1,4');
+
+        assert.equal(sum, 5);
     });
 });
