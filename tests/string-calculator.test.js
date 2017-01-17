@@ -46,4 +46,12 @@ describe("string calculator", function() {
 
         assert.equal(sum, 50);
     });
+
+    it("should return sum of any number new-line separated numbers", function() {
+        let calc = createCalc();
+
+        let sum = calc.add('11\n9\n21\n9');
+
+        assert.equal(sum, 50);
+    });
 });
