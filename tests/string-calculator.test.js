@@ -38,4 +38,12 @@ describe("string calculator", function() {
 
         assert.equal(sum, 5);
     });
+
+    it("should return sum of any number comma separated numbers", function() {
+        let calc = createCalc();
+
+        let sum = calc.add('11,9,21,9');
+
+        assert.equal(sum, 50);
+    });
 });
