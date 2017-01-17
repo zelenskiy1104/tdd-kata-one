@@ -54,4 +54,12 @@ describe("string calculator", function() {
 
         assert.equal(sum, 50);
     });
+
+    it("should support custom delimiters", function() {
+        let calc = createCalc();
+
+        let sum = calc.add('//+++\n222+++333+++111');
+
+        assert.equal(sum, 666);
+    });
 });

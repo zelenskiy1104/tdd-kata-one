@@ -13,17 +13,34 @@ class Calc {
             return parseInt(input);
         }
 
-        let list = input.split(/[\n,]/);
-        let sum = 0;
-        for (let i = 0; i < list.length; i++) {
-            sum += parseInt(list[i]);
+        if (this.isCustomDelimiterString(input)) {
+            let parts = input.split('\n');
+            let delimiter = parts[0].substr(2);
+            let numbers = parts[1];
+
+            let list = numbers.split(delimiter);
+
+            return this.getSumOfList(list);
+
         }
 
-        return sum;
+        let list = input.split(/[\n,]/);
+
+        return this.getSumOfList(list);
     }
 
     isSingleNumber(input) {
         return input.indexOf(',') === -1 && input.indexOf('\n') === -1;
+    }
+
+    isCustomDelimiterString(input) {
+        return input.indexOf('//') > -1 && input.indexOf('\n') > -1;
+    }
+
+    getSumOfList(list) {
+        return list.reduce(function (a, b) {
+            return parseInt(a) + parseInt(b);
+        });
     }
 }
 
