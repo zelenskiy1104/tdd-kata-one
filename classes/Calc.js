@@ -9,7 +9,7 @@ class Calc {
             return this.defaultValue;
         }
 
-        return 1;
+        return parseInt(input);
     }
 }
 
