@@ -1,6 +1,15 @@
 class Calc {
+
+    constructor() {
+        this.defaultValue = 0;
+    }
+
     add(input) {
-        return 0;
+        if (!input) {
+            return this.defaultValue;
+        }
+
+        return 1;
     }
 }
 
